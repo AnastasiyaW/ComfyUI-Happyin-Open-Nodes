@@ -1,0 +1,12 @@
+[project]
+name = "comfyui-happyin-canny"
+description = "Three-pass Canny with an edge-density heat map: finds where the detail in an image lives and extracts it at full resolution."
+version = "1.0.0"
+license = { file = "LICENSE" }
+dependencies = ["opencv-python-headless>=4.5", "numpy"]
+
+[project.urls]
+Repository = "https://github.com/AnastasiyaW/ComfyUI-Happyin-Canny"
+
+[tool.comfy]
+DisplayName = "Happyin Canny"
