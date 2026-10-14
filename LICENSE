@@ -22,4 +22,4 @@ SOFTWARE.
 
 The example images in docs/ are derived from photographs on Wikimedia Commons
 and are NOT covered by this licence; each keeps its source licence, listed in
-docs/CREDITS.md.
+docs/<node>/CREDITS.md (for Happyin Canny: docs/happyin-canny/CREDITS.md).

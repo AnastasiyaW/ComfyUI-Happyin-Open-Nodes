@@ -34,6 +34,7 @@ Each run started a real ComfyUI headless with only this pack in `custom_nodes`, 
 | 0.13.0 | 3.13.11 | 2.10.0+cu130 (CPU run) | 4.13.0 | PASS |
 | 0.3.75 | 3.13.11 | 2.10.0+cu130 (CPU run) | 4.13.0 | PASS |
 | unit test, no ComfyUI | 3.14 | 2.13.0+cpu | 5.0.0 | PASS |
+| unit test, no ComfyUI | 3.13.9 | 2.10.0+cu130 | 4.12.0 | PASS |
 
 The node accepts any `IMAGE` tensor ComfyUI produces: RGB, RGBA or one channel, fp32/fp16/bf16, on CPU or GPU, values outside 0–1 (clipped), and batches.
 
@@ -86,7 +87,7 @@ What matters for denoising is which map covers the places where a strong denoise
 | Local Laplacian variance | 46.4% |
 | Local standard deviation | 40.5% |
 | **Happyin Canny mask** | 44.9% |
-| A random region of the same area | ≈22% |
+| A random region of the same area | ≈22% (expected value: share equals area; not measured) |
 
 As a raw region map it is on a par with Sobel and the Laplacian, which are slightly ahead. The difference is what you get out of the node: a clean, ready-to-use mask with no threshold to tune, full-resolution edges inside it, and a separate fine pass in the hottest zones. Sobel and the Laplacian give a raw map and leave the rest to you.
 
