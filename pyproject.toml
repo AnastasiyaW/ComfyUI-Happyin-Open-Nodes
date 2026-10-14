@@ -1,12 +1,12 @@
 [project]
-name = "comfyui-happyin-canny"
-description = "Three-pass Canny with an edge-density heat map: finds where the detail in an image lives and extracts it at full resolution."
-version = "1.0.0"
+name = "comfyui-happyin-open-nodes"
+description = "Open Happyin node set for ComfyUI. Happyin Canny: an edge-density heat map that finds where the detail lives, to protect it during denoise and return it after diffusion."
+version = "1.1.0"
 license = { file = "LICENSE" }
 dependencies = ["opencv-python-headless>=4.5", "numpy"]
 
 [project.urls]
-Repository = "https://github.com/AnastasiyaW/ComfyUI-Happyin-Canny"
+Repository = "https://github.com/AnastasiyaW/ComfyUI-Happyin-Open-Nodes"
 
 [tool.comfy]
-DisplayName = "Happyin Canny"
+DisplayName = "Happyin Open Nodes"

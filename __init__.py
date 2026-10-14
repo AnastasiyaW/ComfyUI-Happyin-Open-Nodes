@@ -1,8 +1,15 @@
-"""ComfyUI-Happyin-Canny: find the high-detail regions of an image from edge density."""
-from .happyin_canny import HappyinCanny
+"""Happyin Open Nodes: the open part of the Happyin ComfyUI node set.
 
-# Same node key as in the Happyin node pack, so existing workflows keep loading.
-NODE_CLASS_MAPPINGS = {"Happyin_Canny": HappyinCanny}
-NODE_DISPLAY_NAME_MAPPINGS = {"Happyin_Canny": "Happyin Canny"}
+Adding a node: put its module in nodes/, then add one line to each mapping below.
+Node keys match the private Happyin pack, so existing workflows load unchanged.
+"""
+from .nodes.happyin_canny import HappyinCanny
+
+NODE_CLASS_MAPPINGS = {
+    "Happyin_Canny": HappyinCanny,
+}
+NODE_DISPLAY_NAME_MAPPINGS = {
+    "Happyin_Canny": "Happyin Canny",
+}
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]

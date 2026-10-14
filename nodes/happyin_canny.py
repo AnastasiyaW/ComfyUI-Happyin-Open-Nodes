@@ -40,7 +40,12 @@ class HappyinCanny:
         if blur_size % 2 == 0: blur_size += 1
         if mask_noise_removal_size >= 3 and mask_noise_removal_size % 2 == 0: mask_noise_removal_size += 1
 
-        image_np = (image.cpu().numpy() * 255).astype(np.uint8)
+        # Any IMAGE tensor ComfyUI can hand over: fp16/bf16 on GPU, values past [0, 1], RGBA or 1 channel.
+        image_np = np.clip(image.detach().float().cpu().numpy() * 255.0, 0, 255).astype(np.uint8)
+        if image_np.shape[-1] == 1:
+            image_np = np.repeat(image_np, 3, axis=-1)
+        elif image_np.shape[-1] > 3:
+            image_np = np.ascontiguousarray(image_np[..., :3])
         batch_size, height, width, _ = image_np.shape
         results_batch = {name: [] for name in self.RETURN_NAMES}
 
